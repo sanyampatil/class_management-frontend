@@ -32,7 +32,7 @@ const [showSignup, setshowSignup] = useState(false)
                 Log in
               </Link>
               {
-              (showLoginPopup) && <Login />
+              (showLoginPopup) && <Login  />
 
               }
               <Link
@@ -43,7 +43,7 @@ const [showSignup, setshowSignup] = useState(false)
               >
                 Sign up
                 {
-              (showSignup) && <SignupPopUp />
+              (showSignup) && <SignupPopUp  />
 
                 }
               </Link>

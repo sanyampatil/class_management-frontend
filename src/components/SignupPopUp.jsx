@@ -1,135 +1,103 @@
 import React from 'react'
 import { X } from 'lucide-react'
-export const Login = () => {
+import { BsCursor } from 'react-icons/bs'
+import { ImCross } from "react-icons/im";
+
+export const Login = ({ toggleSignup,toggeleLogin}) => {
+
   return (
     <div className='bg-opacity-30 inset-0 backdrop-blur-sm fixed flex justify-center items-center bg-black'>
-      {/* <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" /> */}
+      <div className=' flex flex-col gap-5 text-white relative'>
+            <div className='absolute right-0 m-2  text-black'>
 
-      {/* <!-- This is an example component --> */}
-      <div classNameName='max-w-2xl mx-auto   '>
-        {/* <!-- Modal toggle --> */}
-       
+            <ImCross/>
+            </div>
+        <div className='bg-white h-[60vh] w-[50vh] rounded-xl '>
+          {/* <form className='flex flex-col' action=''> */}
+          /*
+          <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
+            <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
 
-        {/* <!-- Main modal --> */}
-        <div
-          id='authentication-modal'
-          aria-hidden='true'
-          classNameName='hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center bg-black'
+              <h2 className=' text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
+                Sign in to your account
+              </h2>
+            </div>
 
-        >
-          <div classNameName='relative w-full max-w-md px-4 h-full md:h-auto'>
-            {/* <!-- Modal content --> */}
-            <div classNameName='bg-white rounded-lg shadow relative dark:bg-gray-700'>
-              <div classNameName='flex justify-end p-2'>
-                <button
-                  type='button'
-                  classNameName='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white'
-                  data-modal-toggle='authentication-modal'
-                >
-                  <svg
-                    classNameName='w-5 h-5'
-                    fill='currentColor'
-                    viewBox='0 0 20 20'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fill-rule='evenodd'
-                      d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                      clip-rule='evenodd'
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <form
-                classNameName='space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8'
-                action='#'
-              >
-                <h3 classNameName='text-xl font-medium text-gray-900 dark:text-white'>
-                  Sign in to our platform
-                </h3>
-                <div>
+            <div className=' sm:mx-auto sm:w-full sm:max-w-sm'>
+              <form className='space-y-6' action='#' method='POST'>
+                <div className='mt-2'>
                   <label
-                    for='email'
-                    classNameName='text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300'
+                    htmlFor='username'
+                    className='block text-sm font-medium leading-6 text-gray-900'
                   >
-                    Your email
+                    username
                   </label>
+
                   <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    classNameName='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
-                    placeholder='name@company.com'
-                    required=''
+                    id='username'
+                    name='username'
+                    type='text'
+                    autoComplete='current-password'
+                    required
+                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
                 </div>
+
                 <div>
                   <label
-                    for='password'
-                    classNameName='text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300'
+                    htmlFor='email'
+                    className='block text-sm font-medium leading-6 text-gray-900'
                   >
-                    Your password
+                    Email address
                   </label>
-                  <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='••••••••'
-                    classNameName='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
-                    required=''
-                  />
-                </div>
-                <div classNameName='flex justify-between'>
-                  <div classNameName='flex items-start'>
-                    <div classNameName='flex items-center h-5'>
-                      <input
-                        id='remember'
-                        aria-describedby='remember'
-                        type='checkbox'
-                        classNameName='bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800'
-                        required=''
-                      />
-                    </div>
-                    <div classNameName='text-sm ml-3'>
-                      <label
-                        for='remember'
-                        className='font-medium text-gray-900 dark:text-gray-300'
-                      >
-                        Remember me
-                      </label>
-                    </div>
+                  <div className='mt-2'>
+                    <input
+                      id='email'
+                      name='email'
+                      type='email'
+                      autoComplete='email'
+                      required
+                      className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    />
                   </div>
-                  <a
-                    href='#'
-                    className='text-sm text-blue-700 hover:underline dark:text-blue-500'
-                  >
-                    Lost Password?
-                  </a>
                 </div>
-                <button
-                  type='submit'
-                  className='w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-                >
-                  Login to your account
-                </button>
-                {/* <div className='text-sm font-medium text-gray-500 dark:text-gray-300'>
-                  Not registered?{' '}
-                  <a
-                    href='#'
-                    className='text-blue-700 hover:underline dark:text-blue-500'
+
+                <div>
+                  <div className='flex items-center justify-between'>
+                    <label
+                      htmlFor='password'
+                      className='block text-sm font-medium leading-6 text-gray-900'
+                    >
+                      Password
+                    </label>
+                    <div className='text-sm'></div>
+                  </div>
+                  <div className='mt-2'>
+                    <input
+                      id='password'
+                      name='password'
+                      type='password'
+                      autoComplete='current-password'
+                      required
+                      className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type='submit'
+                    className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                   >
-                    Create account
-                  </a>
-                </div> */}
+                    Sign in
+                  </button>
+                </div>
               </form>
             </div>
           </div>
+          {/* </form> */}
         </div>
-
-        {/* <p className="mt-5">This modal element is part of a larger, open-source library of Tailwind CSS components. Learn more by going to the official <a className="text-blue-600 hover:underline" href="#" target="_blank">Flowbite Documentation</a>.</p> */}
       </div>
-
-      {/* <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script> */}
     </div>
   )
 }
