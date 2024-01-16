@@ -3,14 +3,16 @@ import { X } from 'lucide-react'
 import { BsCursor } from 'react-icons/bs'
 import { ImCross } from "react-icons/im";
 
-export const Login = ({ toggleSignup,toggeleLogin}) => {
+export const Login = ({ onClose}) => {
+
+
 
   return (
     <div className='bg-opacity-30 inset-0 backdrop-blur-sm fixed flex justify-center items-center bg-black'>
       <div className=' flex flex-col gap-5 text-white relative'>
             <div className='absolute right-0 m-2  text-black'>
 
-            <ImCross/>
+            <ImCross  onClick={onClose}/>
             </div>
         <div className='bg-white h-[60vh] w-[50vh] rounded-xl '>
           {/* <form className='flex flex-col' action=''> */}

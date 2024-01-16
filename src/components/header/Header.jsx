@@ -5,15 +5,11 @@ import logo from '../../assets/logo.png'
 import Login from '../Loginpopup'
 import SignupPopUp from '../SignupPopUp'
 
-
 // import {}
 const Header = () => {
   const [showLoginPopup, setshowLoginPopup] = useState(false)
 
-const [showSignup, setshowSignup] = useState(false)
-
-
-
+  const [showSignup, setshowSignup] = useState(false)
 
   return (
     <div>
@@ -31,21 +27,18 @@ const [showSignup, setshowSignup] = useState(false)
               >
                 Log in
               </Link>
-              {
-              (showLoginPopup) && <Login  />
-
-              }
+              {showLoginPopup && (
+                <Login onClose={() => setshowLoginPopup(false)} />
+              )}
               <Link
                 to='#'
                 className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none'
                 onClick={() => setshowSignup(true)}
-
               >
                 Sign up
-                {
-              (showSignup) && <SignupPopUp  />
-
-                }
+                {showSignup && (
+                  <SignupPopUp onClose={() => setshowSignup(false)} />
+                )}
               </Link>
             </div>
 
@@ -82,7 +75,7 @@ const [showSignup, setshowSignup] = useState(false)
 
                 <li>
                   <NavLink
-                    to='/contact'
+                    to='/My-staff'
                     className={({ isActive }) =>
                       `block py-2 pr-4 pl-3 duration-200 ${
                         isActive ? 'text-orange-700' : 'text-gray-700'

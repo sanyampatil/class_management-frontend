@@ -1,15 +1,15 @@
 import React from 'react'
 import { X } from 'lucide-react'
 import { ImCross } from 'react-icons/im'
-export const Login = () => {
+export const Login = ({onClose}) => {
   return (
     <div className='  fixed  w-[100%] h-[100vh] bg-opacity-20 inset-0 backdrop-blur-sm  flex justify-center items-center bg-blue-700  '>
       <div classNameName='w-[50%] h-[50vh] relative'>
         <div className='bg-opacity-30 inset-0 backdrop-blur-sm fixed flex justify-center items-center bg-black'>
           <div className='mt-10 flex flex-col gap-5 text-white'>
             <div className='bg-white h-[50vh] w-[] rounded-xl relative'>
-              <div className=' text-black absolute right-0 m-2'>
-                <ImCross />
+              <div className=' text-black absolute right-0 m-2 cursor-pointer'>
+                <ImCross onClick={onClose} />
               </div>
               <form className='flex flex-col' action=''>
                 /*
